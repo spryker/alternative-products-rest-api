@@ -24,11 +24,6 @@ class AlternativeProductsRestApiToProductAlternativeStorageClientBridge implemen
         $this->productAlternativeStorageClient = $productAlternativeStorageClient;
     }
 
-    /**
-     * @param string $concreteSku
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeStorageTransfer|null
-     */
     public function findProductAlternativeStorage(string $concreteSku): ?ProductAlternativeStorageTransfer
     {
         return $this->productAlternativeStorageClient->findProductAlternativeStorage($concreteSku);

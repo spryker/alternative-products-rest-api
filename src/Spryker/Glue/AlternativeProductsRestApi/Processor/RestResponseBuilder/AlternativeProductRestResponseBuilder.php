@@ -27,10 +27,6 @@ class AlternativeProductRestResponseBuilder implements AlternativeProductRestRes
      */
     protected $productsRestApiResource;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\AlternativeProductsRestApi\Dependency\RestApiResource\AlternativeProductsRestApiToProductsRestApiResourceInterface $productsRestApiResource
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         AlternativeProductsRestApiToProductsRestApiResourceInterface $productsRestApiResource
@@ -39,17 +35,11 @@ class AlternativeProductRestResponseBuilder implements AlternativeProductRestRes
         $this->productsRestApiResource = $productsRestApiResource;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createRestResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder->createRestResponse();
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createConcreteProductSkuMissingError(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())
@@ -60,9 +50,6 @@ class AlternativeProductRestResponseBuilder implements AlternativeProductRestRes
         return $this->createRestResponse()->addError($restErrorMessageTransfer);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createConcreteProductNotFoundError(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())
@@ -73,9 +60,6 @@ class AlternativeProductRestResponseBuilder implements AlternativeProductRestRes
         return $this->createRestResponse()->addError($restErrorMessageTransfer);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createRouteNotFoundError(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())
@@ -85,12 +69,6 @@ class AlternativeProductRestResponseBuilder implements AlternativeProductRestRes
         return $this->createRestResponse()->addError($restErrorMessageTransfer);
     }
 
-    /**
-     * @param array $abstractProductIds
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildAbstractAlternativeProductCollectionResponse(
         array $abstractProductIds,
         RestRequestInterface $restRequest
@@ -107,12 +85,6 @@ class AlternativeProductRestResponseBuilder implements AlternativeProductRestRes
         return $restResponse;
     }
 
-    /**
-     * @param array $concreteProductIds
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildConcreteAlternativeProductCollectionResponse(
         array $concreteProductIds,
         RestRequestInterface $restRequest

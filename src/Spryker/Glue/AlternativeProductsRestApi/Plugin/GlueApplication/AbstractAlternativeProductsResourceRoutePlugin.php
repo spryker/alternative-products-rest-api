@@ -68,9 +68,6 @@ class AbstractAlternativeProductsResourceRoutePlugin extends AbstractPlugin impl
         return AbstractProductsRestAttributesTransfer::class;
     }
 
-    /**
-     * @return string
-     */
     public function getParentResourceType(): string
     {
         return ProductsRestApiConfig::RESOURCE_CONCRETE_PRODUCTS;

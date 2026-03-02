@@ -36,11 +36,6 @@ class AbstractAlternativeProductReader implements AbstractAlternativeProductRead
      */
     protected $alternativeProductRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\AlternativeProductsRestApi\Dependency\Client\AlternativeProductsRestApiToProductAlternativeStorageClientInterface $productAlternativeStorage
-     * @param \Spryker\Glue\AlternativeProductsRestApi\Dependency\Client\AlternativeProductsRestApiToProductStorageClientInterface $productStorage
-     * @param \Spryker\Glue\AlternativeProductsRestApi\Processor\RestResponseBuilder\AlternativeProductRestResponseBuilderInterface $alternativeProductRestResponseBuilder
-     */
     public function __construct(
         AlternativeProductsRestApiToProductAlternativeStorageClientInterface $productAlternativeStorage,
         AlternativeProductsRestApiToProductStorageClientInterface $productStorage,
@@ -51,11 +46,6 @@ class AbstractAlternativeProductReader implements AbstractAlternativeProductRead
         $this->alternativeProductRestResponseBuilder = $alternativeProductRestResponseBuilder;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getAbstractAlternativeProductCollection(RestRequestInterface $restRequest): RestResponseInterface
     {
         $concreteProductResource = $restRequest->findParentResourceByType(ProductsRestApiConfig::RESOURCE_CONCRETE_PRODUCTS);
