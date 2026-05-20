@@ -1,0 +1,21 @@
+resource:
+    name: AbstractProducts
+    shortName: abstract-products
+
+    operations:
+        - type: GetCollection
+          name: getAbstractAlternativeProducts
+          description: 'Returns abstract alternative products for a concrete product.'
+          uriTemplate: '/concrete-products/{concreteProductSku}/abstract-alternative-products'
+          provider: Spryker\Glue\AlternativeProductsRestApi\Api\Storefront\Provider\AbstractAlternativeProductsStorefrontProvider
+          uriVariables:
+              concreteProductSku:
+                  fromClass: ConcreteProductsStorefrontResource
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Abstract alternative products retrieved.'
+                  400:
+                      description: 'Concrete product SKU is missing from the request.'
+                  404:
+                      description: 'No concrete product exists for the given SKU.'

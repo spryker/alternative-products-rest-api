@@ -18,4 +18,12 @@
     <transfer name="AbstractProductsRestAttributes">
     </transfer>
 
+    <transfer name="Locale">
+        <property name="localeName" type="string" description="The locale name (e.g., en_US, de_DE)."/>
+    </transfer>
+
+    <transfer name="Store">
+        <property name="name" type="string" description="The name of an entity (e.g., user, category, product, role)."/>
+    </transfer>
+
 </transfers>
