@@ -19,7 +19,7 @@
     </transfer>
 
     <transfer name="Locale">
-        <property name="localeName" type="string" description="The locale name (e.g., en_US, de_DE)."/>
+        <property name="localeName" type="string" description="The name of a locale, such as 'en_US' or 'de_DE'."/>
     </transfer>
 
     <transfer name="Store">
