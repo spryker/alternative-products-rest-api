@@ -15,7 +15,5 @@ resource:
               responses:
                   200:
                       description: 'Concrete alternative products retrieved.'
-                  400:
-                      description: 'Concrete product SKU is missing from the request.'
                   404:
                       description: 'No concrete product exists for the given SKU.'
